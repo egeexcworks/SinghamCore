@@ -1,6 +1,6 @@
 # Software End-User License Agreement (EULA)
 
-**Copyright (c) 2026 [Developer / Copyright Holder Name]. All rights reserved.**
+**Copyright (c) 2026 eclips. Studio. All rights reserved.**
 
 ---
 
