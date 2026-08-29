@@ -1,146 +1,85 @@
 🚀 SinghamCore
+Advanced Moderation Plugin for Paper 1.21.11+
 
-Advanced Minecraft Moderation Plugin for Paper 1.21.11+
-
-SinghamCore is a powerful, secure, and feature-rich moderation plugin for Minecraft servers running on Paper 1.21.11+. It provides a complete suite of administrative tools with a focus on security, performance, and ease of use.
 
 ✨ Features
-🔐 Secure Authentication System
-BCrypt password hashing - Never stores plaintext passwords
+🔐 Secure Authentication - BCrypt hashing, chat-based login (passwords never shown)
 
-Chat-based authentication - Passwords are entered through chat and never shown in console or logs
+👮 Full Moderation - Ban, TempBan, Kick, Mute, Warn with auto-ban
 
-Session management - 5-minute session timeout with auto-logout
+👻 Advanced Vanish - Fully invisible with DiscordSRV fake join/leave messages
 
-Brute force protection - 5 failed attempts = 5-minute lockout
+📝 Notes & History - Private staff notes & complete player history
 
-UUID-based identification - Uses player UUID, not username
+🔒 Chat Lock - Global chat freeze with staff bypass
 
-👮 Moderation Tools
-Permanent bans - Native Minecraft ban system
+🌐 Discord Integration - Automatic DiscordSRV detection
 
-Temporary bans - Support for seconds, minutes, hours, days, weeks
-
-Ban list - Paginated view of all active bans
-
-Kicks - Customizable kick messages
-
-Mutes - Permanent mute support
-
-Warnings - Auto-ban on configurable warning limit
-
-👻 Advanced Vanish System
-Fully invisible - Hides from players, tab list, and entity targeting
-
-DiscordSRV integration - Sends fake join/leave messages to Discord
-
-Fake messages - In-game and Discord messages look exactly like real join/leave events
-
-📝 Notes & History
-Staff notes - Add private notes to player profiles
-
-Complete history - View player's entire moderation record
-
-Color-coded punishments - Active vs expired punishments clearly distinguished
-
-🔒 Chat Management
-Global chat lock - Freeze chat instantly to stop raids/spam
-
-Staff bypass - Staff can chat even when chat is locked
-
-🌐 Discord Integration
-Automatic DiscordSRV detection - No additional configuration needed
-
-Fake join/leave messages - Perfect DiscordSRV embed style
-
-No Discord configuration required - Works with DiscordSRV's existing setup
-
-📋 Command Reference
-🔑 Authentication Commands
-Command	Description
-/singham register	Start registration (type password in chat - hidden)
-/singham login	Login (type password in chat - hidden)
-/singham changepassword	Change password (type old then new - hidden)
-/singham logout	Logout from staff mode
-/singham status	Check authentication status
-👮 Moderation Commands
-Command	Description
-/singham ban <player> <reason>	Permanently ban a player
-/singham unban <player>	Unban a player
-/singham banlist [page]	View all active bans
-/singham tempban <player> <duration> [reason]	Temporarily ban a player
-/singham tempbanlist	View active temp bans
-/singham kick <player> <reason>	Kick a player
-/singham mute <player> <reason>	Mute a player
-/singham unmute <player>	Unmute a player
-/singham warn <player> <reason>	Issue a warning
-👻 Privacy Commands
-Command	Description
-/singham vanish or /singham v	Toggle vanish mode
-📝 Notes System
-Command	Description
-/singham note add <player> <text>	Add a private note
-/singham note remove <player> <id>	Remove a note
-/singham note show <player>	Show notes for a player
-📋 History System
-Command	Description
-/singham history <player>	View complete player history
+📋 Commands
+🔑 Authentication
+yaml
+/singham register      # Create account (type password in chat)
+/singham login         # Login (type password in chat)
+/singham changepassword # Change password
+/singham logout        # Logout
+/singham status        # Check auth status
+👮 Moderation
+yaml
+/singham ban <player> <reason>         # Permanent ban
+/singham unban <player>                # Unban player
+/singham banlist [page]                # View all bans
+/singham tempban <player> <dur> [reason] # Temp ban (30s, 15m, 12h, 7d, 2w)
+/singham tempbanlist                   # View temp bans
+/singham kick <player> <reason>        # Kick player
+/singham mute <player> <reason>        # Mute player
+/singham unmute <player>               # Unmute player
+/singham warn <player> <reason>        # Warn player
+👻 Vanish
+yaml
+/singham vanish   # Toggle vanish
+/singham v        # Toggle vanish (shortcut)
+📝 Notes
+yaml
+/singham note add <player> <text>     # Add note
+/singham note remove <player> <id>    # Remove note
+/singham note show <player>           # Show notes
+📋 History
+yaml
+/singham history <player>   # View complete player history
 🔒 Chat Control
-Command	Description
-/singham chatlock or /singham lockchat	Toggle global chat lock
-ℹ️ Help
-Command	Description
-/singham help	Show all commands
-🔧 Duration Formats
-Format	Meaning
-30s	30 seconds
-15m	15 minutes
-12h	12 hours
-7d	7 days
-2w	2 weeks
-Example: /singham tempban John 7d Spamming
-
-🛡️ Permission Nodes
-Permission	Command Access
+yaml
+/singham chatlock   # Toggle chat lock
+/singham lockchat   # Toggle chat lock (alias)
+🛡️ Permissions
+Permission	Access
 singham.staff	Authentication commands
-singham.ban	/singham ban
-singham.unban	/singham unban
-singham.banlist	/singham banlist
-singham.tempban	/singham tempban
-singham.tempbanlist	/singham tempbanlist
-singham.kick	/singham kick
-singham.mute	/singham mute
-singham.unmute	/singham unmute
-singham.warn	/singham warn
-singham.vanish	/singham vanish
-singham.note	/singham note
-singham.history	/singham history
-singham.chatlock	/singham chatlock
+singham.ban	Ban commands
+singham.unban	Unban commands
+singham.banlist	Ban list
+singham.tempban	Temp ban
+singham.tempbanlist	Temp ban list
+singham.kick	Kick
+singham.mute	Mute
+singham.unmute	Unmute
+singham.warn	Warn
+singham.vanish	Vanish
+singham.note	Notes system
+singham.history	History
+singham.chatlock	Chat lock
 singham.chatlock.bypass	Bypass chat lock
 📦 Installation
-Requirements
-Paper 1.21.11+ (or compatible fork)
+Download singham-core-1.0.0.jar
 
-Java 21 or higher
+Place in plugins/ folder
 
-DiscordSRV (optional - for Discord integration)
-
-Steps
-Download the latest singham-core-1.0.0.jar
-
-Place it in your server's plugins/ folder
-
-Start the server (this generates the config files)
+Start server
 
 Configure plugins/SinghamCore/config.yml
 
 Give staff permissions or OP
 
-Enjoy! 🎉
-
-Configuration
+Config Example
 yaml
-# SinghamCore Configuration
 database:
   url: "jdbc:sqlite:plugins/SinghamCore/data.db"
 
@@ -154,90 +93,41 @@ moderation:
 vanish:
   fake_messages: true
   hide_from_tab: true
-🎯 Quick Start Guide
-For Staff Members
-Register: /singham register → type password in chat
+🔐 Security
+✅ BCrypt password hashing
 
-Login: /singham login → type password in chat
+✅ Never logs passwords
 
-Check status: /singham status
+✅ 5 failed attempts = 5-min lockout
 
-Start moderating: Use any moderation command
+✅ 5-min session timeout
 
-Logout: /singham logout when done
-
-Example Workflow
-text
-/singham login → [type password]
-/singham status → Check session time
-/singham vanish → Go invisible
-/singham ban John Spamming → Ban a player
-/singham note add John "Suspected hacking" → Add note
-/singham history John → Check player history
-/singham logout → Logout when done
-🔐 Security Features
-BCrypt password hashing - Industry-standard secure hashing
-
-Never stores plaintext passwords - Only hashed passwords are stored
-
-No password logging - Passwords are never written to console or logs
-
-Chat-based authentication - Passwords are entered through chat events that are cancelled
-
-Failed attempt tracking - 5 failed attempts = lockout
-
-Session management - Auto-logout after 5 minutes
-
-UUID-based identification - Prevents username spoofing
+✅ UUID-based identification
 
 🌐 Discord Integration
-How It Works
-When a staff member uses /singham vanish:
+🔄 Auto-detects DiscordSRV
 
-In-game: Egeexc_ left the game (fake message)
+👻 Fake join/leave messages when vanished
 
-Discord: Egeexc_ left the server (fake embed)
+🎨 Perfect embed style matching DiscordSRV
 
-Staff becomes invisible to all players
+🔒 No extra config needed
 
-Staff appears offline in Discord player list
+🚀 Quick Start
+yaml
+# Register
+/singham register → [type password]
 
-When unvanishing:
+# Login
+/singham login → [type password]
 
-In-game: Egeexc_ joined the game (fake message)
-
-Discord: Egeexc_ joined the server (fake embed)
-
-Staff becomes visible again
-
-DiscordSRV Integration
-Automatic detection - No configuration needed
-
-Perfect embed style - Matches DiscordSRV's join/leave messages exactly
-
-No external dependencies - Works with or without DiscordSRV
-
-🐛 Reporting Issues
-Found a bug? Have a feature request? Please open an issue on GitHub.
-
+# Start moderating
+/singham status          # Check auth
+/singham vanish          # Go invisible
+/singham ban John Spam   # Ban player
+/singham history John    # Check history
+/singham logout          # Logout
 📝 License
-All rights reserved. This software is proprietary and confidential.
-
-👨‍💻 Author
-SinghamCore Team
-
-🙏 Acknowledgments
-PaperMC - Minecraft server software
-
-DiscordSRV - Discord integration
-
-📊 Statistics
-Total Commands: 20+
-
-Languages: Java 21
-
-Database: SQLite
-
-Optional Integrations: DiscordSRV
+All rights reserved. Proprietary software.
 
 SinghamCore - Advanced Moderation, Simplified! 🚀
