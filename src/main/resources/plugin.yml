@@ -1,0 +1,60 @@
+name: SinghamCore
+version: 1.0.0
+main: SinghamCore
+api-version: '1.21'
+author: SinghamCore
+description: Core management and moderation plugin for Minecraft servers.
+depend: [DiscordSRV]
+
+commands:
+  singham:
+    description: Main Singham command.
+    usage: /singham <subcommand>
+    aliases: [sc]
+
+permissions:
+  singham.staff:
+    description: Staff permission to generate PIN.
+    default: op
+  singham.ban:
+    description: Allows banning players.
+    default: op
+  singham.unban:
+    description: Allows unbanning players.
+    default: op
+  singham.banlist:
+    description: Allows viewing ban list.
+    default: op
+  singham.tempban:
+    description: Allows temporary banning.
+    default: op
+  singham.tempbanlist:
+    description: Allows viewing temp bans.
+    default: op
+  singham.kick:
+    description: Allows kicking players.
+    default: op
+  singham.mute:
+    description: Allows muting players.
+    default: op
+  singham.unmute:
+    description: Allows unmuting players.
+    default: op
+  singham.warn:
+    description: Allows warning players.
+    default: op
+  singham.vanish:
+    description: Allows using vanish.
+    default: op
+  singham.note:
+    description: Allows managing notes.
+    default: op
+  singham.history:
+    description: Allows viewing player history.
+    default: op
+  singham.chatlock:
+    description: Allows toggling chat lock.
+    default: op
+  singham.chatlock.bypass:
+    description: Allows bypassing chat lock.
+    default: op

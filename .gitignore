@@ -1,0 +1,8 @@
+@"
+target/
+bin/
+.idea/
+.vscode/
+*.iml
+*.log
+"@ | Set-Content .gitignore

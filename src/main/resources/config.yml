@@ -1,0 +1,14 @@
+# SinghamCore Configuration
+database:
+  url: "jdbc:sqlite:plugins/SinghamCore/data.db"
+
+discord:
+  webhook-url: ""
+
+moderation:
+  max_warnings: 5
+  auto_ban_on_max_warnings: true
+
+vanish:
+  fake_messages: true
+  hide_from_tab: true
