@@ -1,8 +1,5 @@
-🚀 SinghamCore
-Advanced Minecraft Moderation Plugin for Paper 1.21.11+
-https://img.shields.io/badge/Paper-1.21.11-blue.svg
-https://img.shields.io/badge/Java-21-orange.svg
-https://img.shields.io/badge/Version-1.0.0-brightgreen.svg
+###🚀 SinghamCore
+###Advanced Minecraft Moderation Plugin for Paper 1.21.11+
 
 SinghamCore is a powerful, secure, and feature-rich moderation plugin for Minecraft servers running on Paper 1.21.11+. It provides a complete suite of administrative tools with a focus on security, performance, and ease of use.
 
